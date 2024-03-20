@@ -10,15 +10,23 @@
     { nixpkgs
     , flake-utils
     , ...
-    }: flake-utils.lib.eachDefaultSystem (system:
-    let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in
-    {
-      devShells.default = with pkgs; pkgs.mkShell {
-        buildInputs = [
-          nixpkgs-fmt
-        ];
+    }: flake-utils.lib.eachDefaultSystem
+      (system:
+      let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        devShells.default = with pkgs; pkgs.mkShell {
+          buildInputs = [
+            nixpkgs-fmt
+          ];
+        };
+      }) // {
+      templates = {
+        rust = {
+          path = ./rust;
+          description = "Rust minimum starter";
+        };
       };
-    });
+    };
 }
