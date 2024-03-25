@@ -1,24 +1,24 @@
-name: build-rust
+name: develop-formatters
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'rust/**'
+      - 'formatters/**'
   pull_request:
     paths:
-      - 'rust/**'
+      - 'formatters/**'
 
 jobs:
-  build:
+  check:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
     defaults:
       run:
-        working-directory: ./rust
+        working-directory: ./formatters
     steps:
       - uses: actions/checkout@v4
 
@@ -28,5 +28,5 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
       - uses: DeterminateSystems/flake-checker-action@main
 
-      - name: Build package
-        run: nix build .
+      - name: Install packages
+        run: nix develop
