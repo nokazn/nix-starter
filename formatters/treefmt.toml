@@ -8,7 +8,6 @@ excludes = []
 command = "dprint"
 options = ["fmt"]
 includes = ["*.json", "*.md", "*.toml"]
-excludes = ["profile-summary-card-output/**"]
 
 [formatter.yaml]
 command = "yamlfmt"

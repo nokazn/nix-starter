@@ -22,11 +22,24 @@
           ];
         };
       }) // {
-      templates = {
-        rust = {
-          path = ./rust;
-          description = "Rust minimum starter";
-        };
-      };
+      templates =
+        let
+          list = map
+            ({ path, ... }@value: {
+              inherit value;
+              name = baseNameOf path;
+            })
+            [
+              {
+                path = ./rust;
+                description = "Rust minimum starter";
+              }
+              {
+                path = ./formatters;
+                description = "With common formatters";
+              }
+            ];
+        in
+        builtins.listToAttrs list;
     };
 }
