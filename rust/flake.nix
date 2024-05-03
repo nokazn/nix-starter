@@ -9,8 +9,7 @@
   };
 
   outputs =
-    { self
-    , nixpkgs
+    { nixpkgs
     , flake-utils
     , naersk
     , ...
@@ -35,6 +34,7 @@
           rustPackages.clippy
           cargo-watch
           nixpkgs-fmt
+          just
         ] ++ lib.optionals stdenv.isDarwin [
           darwin.apple_sdk.frameworks.Security
         ];
