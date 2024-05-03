@@ -34,6 +34,7 @@
           rustfmt
           rustPackages.clippy
           cargo-watch
+          nixpkgs-fmt
         ] ++ lib.optionals stdenv.isDarwin [
           darwin.apple_sdk.frameworks.Security
         ];
