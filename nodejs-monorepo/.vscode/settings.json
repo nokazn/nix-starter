@@ -1,0 +1,15 @@
+{
+  "[json][jsonc][markdown][toml]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dprint.dprint"
+  },
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "quickfix.biome": "explicit",
+      "source.organizeImports.biome": "explicit"
+    },
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  },
+  "biome.enabled": true
+}
