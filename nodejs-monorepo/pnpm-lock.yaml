@@ -1,0 +1,22 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@tsconfig/recommended':
+        specifier: ^1.0.6
+        version: 1.0.6
+
+packages:
+
+  '@tsconfig/recommended@1.0.6':
+    resolution: {integrity: sha512-0IKu9GHYF1NGTJiYgfWwqnOQSlnE9V9R7YohHNNf0/fj/SyOZWzdd06JFr0fLpg1Mqw0kGbYg8w5xdkSqLKM9g==}
+
+snapshots:
+
+  '@tsconfig/recommended@1.0.6': {}
